@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3078531720077514287}
-  - component: {fileID: 8638158093907900729}
   - component: {fileID: 260475414521166938}
   - component: {fileID: 4733040084903855437}
   m_Layer: 0
@@ -27,28 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649368373914622308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6142017201588967780}
   m_Father: {fileID: 6586500018821149935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8638158093907900729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649368373914622308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f19c7f94c794c5097d8bd11e39c750d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpinSpeed: 1000
-  RotationRange: 15
-  Motion: 0
 --- !u!65 &260475414521166938
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4838,7 +4822,9 @@ GameObject:
   - component: {fileID: 6586500018821149935}
   - component: {fileID: 6586500018821149934}
   - component: {fileID: 6586500018821149929}
-  - component: {fileID: 3466907262301439822}
+  - component: {fileID: 1352964145256372163}
+  - component: {fileID: 6628953432127292913}
+  - component: {fileID: 9034771063552344713}
   m_Layer: 0
   m_Name: TEMPMegaFlare
   m_TagString: Untagged
@@ -9582,7 +9568,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &3466907262301439822
+--- !u!114 &1352964145256372163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9591,13 +9577,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 6586500018821149928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d365b00def9cd74cbc3a8091c27301d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9488e0f67f65b6c45b8d62a62bb7cf38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
   vfx: {fileID: 2833115021880217422}
-  _duration: 1
+  _duration: 2
   damage: 1
+  friendlyFire: 0
+--- !u!114 &6628953432127292913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6586500018821149928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7e72290da7cf04d8686a8c934830f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9034771063552344713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6586500018821149928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bbf759514d7f22468d9deadeadd0317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 800
+  counterclockwise: 0
 --- !u!1 &6923371756527569492
 GameObject:
   m_ObjectHideFlags: 0

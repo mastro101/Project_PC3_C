@@ -509,7 +509,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &453915585178577469
 MonoBehaviour:
@@ -532,10 +532,13 @@ MonoBehaviour:
   dodgeCooldown: 2
   slowMoPercent: 0.5
   timeForSlowMo: 5
-  bullet: {fileID: 6082933605966657830, guid: ca449563069c1924eab05bf3a2f74deb, type: 3}
+  bullet: {fileID: 3115308544829923073, guid: 14d27922935ae944bbe3df411b99452b, type: 3}
   timeForSequence: 0.2
   sequences:
   - {fileID: 11400000, guid: e74782ab56f8b804a964b8552e74c4fd, type: 2}
+  - {fileID: 11400000, guid: fa1ce74351bb7a54fad8960ca5074957, type: 2}
+  - {fileID: 11400000, guid: 8bb5706985b53be4398e72946e52fdf1, type: 2}
+  - {fileID: 11400000, guid: 23170a661e8124c4897d2e42b6595f51, type: 2}
 --- !u!114 &8412846717692124059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +581,7 @@ Animator:
   m_GameObject: {fileID: 8412846717692124058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 41c9b0b2d431bb94aaa4af09321917f5, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

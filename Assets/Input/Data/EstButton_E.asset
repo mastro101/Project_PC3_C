@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a713178c650a7c4a8f9dbab391f672f, type: 3}
-  m_Name: NorthButton_Shift
+  m_Name: EstButton_E
   m_EditorClassIdentifier: 
-  key: 304
-  XBoxKey: 333
-  keySprite: {fileID: 21300000, guid: 3575a4c36c34c9443952750f7f607c12, type: 3}
-  XboxSprite: {fileID: 21300000, guid: dcebaf616bae34840865e6356591dbd3, type: 3}
-  PSSprite: {fileID: 21300000, guid: 04104a26eb4183c4e8f1d9ee75c01748, type: 3}
+  key: 101
+  XBoxKey: 331
+  keySprite: {fileID: 21300000, guid: 233db2e568af49b459afe59ce3920674, type: 3}
+  XboxSprite: {fileID: 21300000, guid: 395f75d2821ad744c874e9b40e1ee00e, type: 3}
+  PSSprite: {fileID: 21300000, guid: c7eecc8d86dc1e14db840de4621a003a, type: 3}

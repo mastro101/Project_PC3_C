@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: M_Section3
   m_EditorClassIdentifier: 
   inputDatas:
-  - {fileID: 11400000, guid: 7955f2b022df0fd4195defee1e0f6450, type: 2}
+  - {fileID: 11400000, guid: 6c32d9fb331976243887b7399cb2d70f, type: 2}
   - {fileID: 11400000, guid: b3adf4fad296f8949854c205ba734953, type: 2}
-  skillPrefab: {fileID: 0}
+  skillPrefab: {fileID: 2064250077824822761, guid: 8893eb90a02947447aac1b624ea0da86,
+    type: 3}

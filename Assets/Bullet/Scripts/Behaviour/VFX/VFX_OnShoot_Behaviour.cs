@@ -18,6 +18,7 @@ public class VFX_OnShoot_Behaviour : BaseSkillBehaviour
     protected override void OnReturn()
     {
         base.OnReturn();
-        Destroy(vfx.gameObject);
+        if (vfx != null)
+            Destroy(vfx.gameObject);
     }
 }

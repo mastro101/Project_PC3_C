@@ -25,14 +25,13 @@ public abstract class CharacterBase : MonoBehaviour, IDamageable
     public Rigidbody myRigidbody { get; private set; }
 
     public bool knockbackState { get; protected set; }
-    public bool canMove;
+    [HideInInspector] public bool canMove;
 
     public virtual void TakeDamage(int _damage)
     {
         if (!invulnerable)
         {
             currentHealth -= _damage;
-            Debug.Log("Ouch");
             OnDamage?.Invoke(_damage);
         }
     }

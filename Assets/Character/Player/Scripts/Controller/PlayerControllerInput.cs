@@ -93,7 +93,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
     IEnumerator dodgeCorutine;
     private void HandleDodge()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton5)) && canDash && canMove)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetAxis("Fire1") < 0) && canDash && canMove)
         {
             dodgeCorutine = Dodge();
             StartCoroutine(dodgeCorutine);
@@ -118,7 +118,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
         while (dodgeTimer < playerData.dodgeDuration)
         {
             dodgeTimer += Time.deltaTime;
-            if (Physics.Raycast(transform.position, dodgeVelocity.normalized, out hit, 0.5f))
+            if (Physics.Raycast(transform.position, dodgeVelocity.normalized, out hit, 0.8f))
             {
                 if (hit.transform.gameObject.tag == "Wall")
                 {

@@ -18,4 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ba6fff1557f707469de9a320d581b33, type: 2}
   level: 3
   exp: 0
-  cooldown: 0
+  cooldown: 5

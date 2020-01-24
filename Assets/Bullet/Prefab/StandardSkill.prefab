@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   vfx: {fileID: 5887181797019184148}
-  _duration: 5
+  _duration: 2
   damage: 1
   friendlyFire: 0
 --- !u!114 &4088009166714423956

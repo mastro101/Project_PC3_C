@@ -27,18 +27,15 @@ public class CameraShake : MonoBehaviour
         // Get Virtual Camera Noise Profile
         if (VirtualCamera != null)
         {
+            //TEMP:
+            if (player == null)
+                player = FindObjectOfType<PlayerData>();
+            //
             virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
             virtualCameraNoise.m_AmplitudeGain = 0f;
         }
-        player.OnDamage += StartShake;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            StartShake(0);
-        }
+        if (player)
+            player.OnDamage += StartShake;
     }
 
     void StartShake(int playerDamage)

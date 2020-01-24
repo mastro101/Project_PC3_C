@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a713178c650a7c4a8f9dbab391f672f, type: 3}
-  m_Name: WestButton_E
+  m_Name: WestButton_R
   m_EditorClassIdentifier: 
-  key: 101
+  key: 114
   XBoxKey: 332
-  keySprite: {fileID: 21300000, guid: 233db2e568af49b459afe59ce3920674, type: 3}
+  keySprite: {fileID: 21300000, guid: 70bb19a14674afe41b834ac9d6f0e873, type: 3}
   XboxSprite: {fileID: 21300000, guid: 03eb92d529cd86348949d40399c3eb69, type: 3}
   PSSprite: {fileID: 21300000, guid: bf04a8644ebdd574da9ae94f2e0f9e33, type: 3}
