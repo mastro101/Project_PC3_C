@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ba962d5db305d44b5149e8d4c88830, type: 3}
   m_Name: Crater
   m_EditorClassIdentifier: 
-  comboSections:
-  - {fileID: 11400000, guid: 6c4d67184968dee419613330abbe92b5, type: 2}
-  - {fileID: 11400000, guid: 4b7cf757dcfe8b641b664e9ddd259ee8, type: 2}
-  - {fileID: 11400000, guid: 3ba6fff1557f707469de9a320d581b33, type: 2}
-  level: 3
-  exp: 0
+  combosData:
+  - comboSection: {fileID: 11400000, guid: 6c4d67184968dee419613330abbe92b5, type: 2}
+    NecessaryExp: 0
+  - comboSection: {fileID: 11400000, guid: 4b7cf757dcfe8b641b664e9ddd259ee8, type: 2}
+    NecessaryExp: 30
+  - comboSection: {fileID: 11400000, guid: 3ba6fff1557f707469de9a320d581b33, type: 2}
+    NecessaryExp: 60
+  startingExp: 60
   cooldown: 5

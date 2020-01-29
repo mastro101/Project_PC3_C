@@ -21,7 +21,7 @@ public class Attack_ExplosionOnDamage_SkillBehaviour : BaseSkillBehaviour
                 if (!friendlyFire && damageable == skill.shooter)
                     continue;
 
-                damageable.TakeDamage(damage);
+                damageable.TakeDamage(damage, skill.command);
                 damageable.KnockBack(knockbackForce, transform.position);
             }
         }

@@ -26,7 +26,7 @@ public class SequenceLog : MonoBehaviour
 
     void InstantiateSequenceView(GameObject go, SetSequences sequence)
     {
-        for (int i = 0; i < sequence.data.level; i++)
+        for (int i = 0; i < sequence.level; i++)
         {
             SequenceUI _sequenceUI = Instantiate(sequenceUI, go.transform);
             foreach (var input in sequence.commands[i].data.inputDatas)

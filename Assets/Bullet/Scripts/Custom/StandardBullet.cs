@@ -10,9 +10,9 @@ public class StandardBullet : BulletBase
     [SerializeField] float explosionKnockbackForce;
     [SerializeField] int explosionDamage;
 
-    public override void Shoot(Vector3 shootPosition, Vector3 direction, IShooter _shooter)
+    public override void Shoot(Vector3 shootPosition, Vector3 direction, IShooter _shooter, CommandSequence _command)
     {
-        base.Shoot(shootPosition, direction, _shooter);
+        base.Shoot(shootPosition, direction, _shooter, _command);
         transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z), Vector3.up);
     }
 
@@ -36,7 +36,7 @@ public class StandardBullet : BulletBase
                 if (_damageable.gameObject == shooter.gameObject)
                     continue;
         
-                _damageable.TakeDamage(explosionDamage);
+                _damageable.TakeDamage(explosionDamage, null);
                 _damageable.KnockBack(explosionKnockbackForce, transform.position);
             }
         }

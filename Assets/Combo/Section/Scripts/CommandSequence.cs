@@ -8,6 +8,7 @@ public class CommandSequence
 
     protected IShooter controller;
     protected PlayerControllerInput playerController;
+    public SetSequences set { get; protected set; }
 
     public InputData currentInput { get; private set; }
     public System.Action<CommandSequence> onStartSequence;
@@ -19,11 +20,12 @@ public class CommandSequence
     int currentInputIndex = 0;
     bool complated = false;
 
-    public CommandSequence(CommandSequenceData data, PlayerControllerInput playerController, IShooter controller)
+    public CommandSequence(CommandSequenceData data, PlayerControllerInput playerController, IShooter controller, SetSequences set)
     {
         this.data = data;
         this.playerController = playerController;
         this.controller = controller;
+        this.set = set;
 
         //this.playerController.OnInputPressed += CheckPressedInput;
         this.controller.OnDestroy += UnsubscribeEvent;
@@ -55,7 +57,7 @@ public class CommandSequence
     public virtual void Execute()
     {
         if (data.skillPrefab)
-            BulletPoolManager.instance.TakeBullet(data.skillPrefab).Shoot(controller.shootPosition, controller.aimDirection, controller);
+            BulletPoolManager.instance.TakeBullet(data.skillPrefab).Shoot(controller.shootPosition, controller.aimDirection, controller, this);
     }
 
     public void HandleInputSequence()
@@ -76,6 +78,11 @@ public class CommandSequence
                 Complete();
             }
         }
+    }
+
+    public void AddExp(int _exp)
+    {
+        set.AddExp(_exp);
     }
 
     public void ResetSequence()

@@ -19,6 +19,7 @@ public class BulletBase : MonoBehaviour
     public bool created { get; set; }
     float returnTime;
     [HideInInspector] public IShooter shooter;
+    [HideInInspector] public CommandSequence command;
 
     public Action OnPreShoot;
     public Action OnShoot;
@@ -33,11 +34,12 @@ public class BulletBase : MonoBehaviour
     }
 
     #region API
-    public virtual void Shoot(Vector3 shootPosition, Vector3 direction, IShooter _shooter)
+    public virtual void Shoot(Vector3 shootPosition, Vector3 direction, IShooter _shooter, CommandSequence _command)
     {
         shooter = _shooter;
         transform.position = shootPosition;
         state = State.Shooted;
+        command = _command;
         returnTime = Time.time + _duration;
         OnPreShoot?.Invoke();
         OnShoot?.Invoke();
@@ -60,7 +62,7 @@ public class BulletBase : MonoBehaviour
     public virtual void OnDamageableCollide(IDamageable damageable)
     {
         OnDamage?.Invoke(damageable);
-        damageable.TakeDamage(damage);
+        damageable.TakeDamage(damage, command);
         OnPostDamage?.Invoke();
     }
 

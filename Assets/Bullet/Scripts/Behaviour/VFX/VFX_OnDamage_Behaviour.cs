@@ -19,6 +19,7 @@ public class VFX_OnDamage_Behaviour : BaseSkillBehaviour
     IEnumerator Corutine()
     {
         yield return new WaitForSeconds(vfx.main.duration);
-        Destroy(vfx.gameObject);
+        if (vfx)
+            Destroy(vfx.gameObject);
     }
 }

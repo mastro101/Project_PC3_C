@@ -182,7 +182,9 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
             }
 
             if (transformVelocity == Vector3.zero)
+            {
                 animator.SetTrigger("Idle");
+            }
         }
 
         if ((stickAxis.x < -0.1f || stickAxis.x > 0.1f) || (stickAxis.z < -0.1f || stickAxis.z > 0.1f))
@@ -247,7 +249,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
             if (Input.GetAxis("Fire1") > 0 && shooted == false)
             {
                 shooted = true;
-                BulletPoolManager.instance.Shoot(playerData.bullet, _shootPosition.position, aimDirection, this);
+                BulletPoolManager.instance.Shoot(playerData.bullet, _shootPosition.position, aimDirection, this, null);
             }
             else if (Input.GetAxis("Fire1") <= 0 && shooted == true)
             {
@@ -256,7 +258,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
 
             if (Input.GetButtonDown("Fire2"))
             {
-                BulletPoolManager.instance.Shoot(playerData.bullet, _shootPosition.position, aimDirection, this);
+                BulletPoolManager.instance.Shoot(playerData.bullet, _shootPosition.position, aimDirection, this, null);
             }
         }
     } 

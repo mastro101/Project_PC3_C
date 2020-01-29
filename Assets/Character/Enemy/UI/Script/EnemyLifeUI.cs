@@ -13,7 +13,7 @@ public class EnemyLifeUI : MonoBehaviour
         enemy.OnDamage += FillSlider;
     }
 
-    void FillSlider(int _damage)
+    void FillSlider(int _damage, CommandSequence _command)
     {
         slider.fillAmount = (float)enemy.currentHealth / (float)enemy.maxHealth;
     }

@@ -38,7 +38,7 @@ public class CameraShake : MonoBehaviour
             player.OnDamage += StartShake;
     }
 
-    void StartShake(int playerDamage)
+    void StartShake(int playerDamage, CommandSequence _command)
     {
         StopCoroutine(corutine);
         corutine = Shake();

@@ -79,7 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 10
   _maxHealth: 10
+  damageMaterial: {fileID: 2100000, guid: 406bd1b145d995b4bbc8a8e493004151, type: 2}
   canMove: 0
+  exp: 2
   bullet: {fileID: 6082933605966657830, guid: ca449563069c1924eab05bf3a2f74deb, type: 3}
   viewRadious: 3.5
   fireRate: 1
