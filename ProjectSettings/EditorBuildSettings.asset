@@ -12,18 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneTemporaneePerBuild24_01_20/ScenaTemp1.unity
     guid: e14cbfc545a6579458a4b07092dbe7bd
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/zOld/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/Prototype/Perspective.unity
+    path: Assets/Scenes/zOld/Prototype/Perspective.unity
     guid: 61c2cc7577e8dd141922342f04b702cc
   - enabled: 0
-    path: Assets/Scenes/Prototype/TopDown.unity
+    path: Assets/Scenes/zOld/Prototype/TopDown.unity
     guid: 05acab3ce820c124f90e252f79b53bf3
   - enabled: 0
-    path: Assets/Scenes/Prototype/2D.unity
+    path: Assets/Scenes/zOld/Prototype/2D.unity
     guid: 6572a3b7363b82b4caa32b01a4a90f92
   - enabled: 0
-    path: Assets/Scenes/Blockout.unity
+    path: Assets/Scenes/zOld/Blockout.unity
     guid: d3449f9af1e33d444bea5e0455b13585
   m_configObjects: {}
