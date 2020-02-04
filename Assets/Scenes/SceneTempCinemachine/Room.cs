@@ -8,7 +8,7 @@ public class Room : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
+        if(other.CompareTag("Player") && !other.isTrigger)
         {
             virtualCamera.SetActive(true);
         }
@@ -18,7 +18,7 @@ public class Room : MonoBehaviour
     public virtual void OntriggerExit(Collider other)
 {
 
-    if (other.CompareTag("Player") && !other.isTrigger)
+    if(other.CompareTag("Player") && !other.isTrigger)
     {
         virtualCamera.SetActive(false);
     }
