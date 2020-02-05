@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a713178c650a7c4a8f9dbab391f672f, type: 3}
   m_Name: NorthButton_T
   m_EditorClassIdentifier: 
-  key: 116
+  key: 32
   XBoxKey: 333
-  keySprite: {fileID: 21300000, guid: 87767a987566de241a40a40cf28b4753, type: 3}
+  keySprite: {fileID: 21300000, guid: 4dab9c34a37b16a49bbd1fea0ee5bbe7, type: 3}
   XboxSprite: {fileID: 21300000, guid: dcebaf616bae34840865e6356591dbd3, type: 3}
   PSSprite: {fileID: 21300000, guid: 04104a26eb4183c4e8f1d9ee75c01748, type: 3}
