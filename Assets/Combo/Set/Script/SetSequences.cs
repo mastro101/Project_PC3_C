@@ -21,8 +21,11 @@ public class SetSequences
     public System.Action<SetSequences> onResetSequence;
     public System.Action<SetSequences> onWrongInput;
     public System.Action<SetSequences> onExecute;
+    public System.Action onAddExp;
+    public System.Action<float> onCooldownChange;
 
     public bool canExecute { get; private set; }
+    public bool levelMaxed { get; private set; }
 
     int currentSectionIndex = 0;
     bool completed = false;
@@ -42,7 +45,11 @@ public class SetSequences
             command.onCompletedSequence += NextSection;
             command.onWrongInput += RemoveSequence;
             if (exp >= sequences.NecessaryExp)
+            {
                 level++;
+                if (level == data.combosData.Length)
+                    levelMaxed = true;
+            }
             commands.Add(command);
         }
 
@@ -134,9 +141,16 @@ public class SetSequences
         canExecute = true;
     }
 
+    float timer;
     IEnumerator CooldownCorutine()
     {
-        yield return new WaitForSeconds(data.cooldown);
+        timer = data.cooldown;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            onCooldownChange?.Invoke(timer);
+            yield return null;
+        }
         OnCooldownEnd();
         yield return null;
     }
@@ -146,10 +160,12 @@ public class SetSequences
         exp += _exp;
         if (exp < 0)
             exp = 0;
-        Debug.Log(exp);
         if (data.combosData[level - 1].NecessaryExp >= exp)
         {
             level++;
+            if (level == data.combosData.Length)
+                levelMaxed = true;
         }
+        onAddExp?.Invoke();
     }
 }

@@ -9,6 +9,7 @@ public class SetSequencesData : ScriptableObject
     public CommandDataList[] combosData;
     public int startingExp;
     public float cooldown;
+    public Sprite icon;
 }
 
 [System.Serializable]

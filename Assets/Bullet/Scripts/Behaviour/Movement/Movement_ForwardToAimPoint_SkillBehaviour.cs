@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement_Forward_SkillBehaviour : BaseSkillBehaviour
+public class Movement_ForwardToAimPoint_SkillBehaviour : BaseSkillBehaviour
 {
     [SerializeField] float speed;
 

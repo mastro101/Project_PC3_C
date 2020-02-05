@@ -38,6 +38,7 @@ public class BulletBase : MonoBehaviour
     {
         shooter = _shooter;
         transform.position = shootPosition;
+        transform.rotation = Quaternion.LookRotation(direction);
         state = State.Shooted;
         command = _command;
         returnTime = Time.time + _duration;
