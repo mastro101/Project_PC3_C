@@ -93,7 +93,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
     IEnumerator dodgeCorutine;
     private void HandleDodge()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetAxis("Fire1") < 0) && canDash && canMove)
+        if ((Input.GetKeyDown(playerData.dodgeKeyboard) || Input.GetAxis("Fire1") < 0) && canDash && canMove)
         {
             dodgeCorutine = Dodge();
             StartCoroutine(dodgeCorutine);
@@ -103,6 +103,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
     float dodgeTimer = 0;
     IEnumerator Dodge()
     {
+        canDash = false;
         canMove = false;
         rb.useGravity = false;
         collider.isTrigger = true;

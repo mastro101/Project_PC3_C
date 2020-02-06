@@ -10,6 +10,7 @@ public class PlayerData : CharacterBase
     [Header("Movement")]
     public float speed;
     [Header("Dash")]
+    public KeyCode dodgeKeyboard;
     public float dodgeDuration;
     public float dodgeSpeed;
     public float dodgeCooldown;

@@ -21,3 +21,4 @@ MonoBehaviour:
     NecessaryExp: 60
   startingExp: 60
   cooldown: 5
+  icon: {fileID: 21300000, guid: e52ea8bbac2585c45ae8f02252f5ea41, type: 3}

@@ -529,6 +529,7 @@ MonoBehaviour:
   damageMaterial: {fileID: 2100000, guid: 406bd1b145d995b4bbc8a8e493004151, type: 2}
   canMove: 0
   speed: 5
+  dodgeKeyboard: 304
   dodgeDuration: 0.3
   dodgeSpeed: 15
   dodgeCooldown: 2
