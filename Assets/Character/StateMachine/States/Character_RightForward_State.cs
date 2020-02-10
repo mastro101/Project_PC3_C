@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace StateMachine.Character
 {
-    public class Character_Down_State : Character_Base_State
+    public class Character_RightForward_State : Character_Base_State
     {
         [SerializeField] Material down;
 
@@ -12,6 +12,7 @@ namespace StateMachine.Character
         {
             base.Enter();
             context.character.SetMaterial(down);
+            context.playerInput.SetRendererActive(PlayerControllerInput.AnimDirection.dxf);
         }
     }
 }

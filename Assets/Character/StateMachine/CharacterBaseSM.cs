@@ -7,12 +7,14 @@ namespace StateMachine.Character
     public class CharacterBaseSM : StateMachineBase
     {
         [SerializeField] CharacterBase character;
+        [SerializeField] PlayerControllerInput playerInput;
 
         protected override void Start()
         {
             currentContext = new CharacterBaseSMContext()
             {
                 character = character,
+                playerInput = playerInput,
             };
             base.Start();
         }
@@ -21,5 +23,6 @@ namespace StateMachine.Character
     public class CharacterBaseSMContext : IStateMachineContext
     {
         public CharacterBase character;
+        public PlayerControllerInput playerInput;
     }
 }

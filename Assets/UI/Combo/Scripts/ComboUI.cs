@@ -15,14 +15,12 @@ public class ComboUI : MonoBehaviour
     void SubscribeEvent()
     {
         combo.onAddExp         += SetExpBar;
-        //combo.onExecute        += StartCooldownBar;
         combo.onCooldownChange += SetCooldownBar;
     }
 
     void UnsubscribeEvent()
     {
         combo.onAddExp         -= SetExpBar;
-        //combo.onExecute        -= StartCooldownBar;
         combo.onCooldownChange -= SetCooldownBar;
     }
 
@@ -45,21 +43,6 @@ public class ComboUI : MonoBehaviour
     public void SetCooldownBar(float _time)
     {
         cooldownBarImage.fillAmount = 1 - (deltaCooldown * _time);
-    }
-
-    public void StartCooldownBar(SetSequences _s)
-    {
-        cooldownBarImage.fillAmount = 0;
-        StartCoroutine(CooldownCorutine());
-    }
-
-    IEnumerator CooldownCorutine()
-    {
-        while (cooldownBarImage.fillAmount < 1)
-        {
-            cooldownBarImage.fillAmount += deltaCooldown;
-            yield return null;
-        }
     }
 
     public void SetExpBar()

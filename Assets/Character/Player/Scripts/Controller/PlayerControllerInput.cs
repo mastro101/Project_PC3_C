@@ -12,6 +12,10 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
     [SerializeField] Transform pointer;
     [SerializeField] Animator animator;
     [SerializeField] Collider collider;
+    [Space]
+    [SerializeField] Animator dxf;
+    [SerializeField] Animator dxb, sxf, sxb;
+    [SerializeField] SpriteRenderer dxfR, dxbR, sxfR, sxbR;
 
     Rigidbody rb;
 
@@ -34,6 +38,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
     int consecutiveButtonPressed = -1;
     bool buttonJustPressed = false;
     float sequenceRemainTime;
+    Animator[] animators;
 
     #region Mono
     private void Awake()
@@ -49,12 +54,17 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
             SetSequences sequence = new SetSequences(sequenceData, this, this);
             sequence.onStartSequence    += StartSequence;
             sequence.onCompletedSection += OnCorrectSequence;
+            sequence.onExecute          += Attack;
             foreach (var section in sequence.commands)
             {
                 section.onCorrectInput  += OnCorrectInput;
             }
             sequences.Add(sequence);
         }
+
+        animators = new Animator[] { dxb, dxf, sxb, sxf };
+
+        SetRendererActive(AnimDirection.sxf);
     }
 
     private void OnDisable()
@@ -65,6 +75,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
             sequence.ResetSequence();
             sequence.onStartSequence    -= StartSequence;
             sequence.onCompletedSection -= OnCorrectSequence;
+            sequence.onExecute          -= Attack;
             foreach (var section in sequence.commands)
             {
                 section.onCorrectInput  -= OnCorrectInput;
@@ -86,6 +97,45 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
     }
     #endregion
 
+    #region API
+    public void SetRendererActive(AnimDirection _anim)
+    {
+        dxfR.enabled = false; ; dxbR.enabled = false; sxbR.enabled = false; sxfR.enabled = false;
+        switch (_anim)
+        {
+            case AnimDirection.dxf:
+                dxfR.enabled = true;
+                break;
+            case AnimDirection.dxb:
+                dxbR.enabled = true;
+                break;
+            case AnimDirection.sxf:
+                sxfR.enabled = true;
+                break;
+            case AnimDirection.sxb:
+                sxbR.enabled = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void SetAnim(string _string)
+    {
+        foreach (var anim in animators)
+        {
+            anim.SetTrigger(_string);
+        }
+    }
+
+    public void SetAnim(string _string, bool _bool)
+    {
+        foreach (var anim in animators)
+        {
+            anim.SetBool(_string, _bool);
+        }
+    }
+    #endregion
 
     #region OtherInputHandler
     bool canDash = true;
@@ -143,6 +193,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
 
     bool usingJoypad = false;
     bool canMove = true;
+    bool isMove = false;
 
     Vector3 stickAxis;
     Vector3 keyAxis;
@@ -165,26 +216,45 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
         
         if (animator != null)
         {
-            if (transformVelocity.x < -0.05f)
-            {
-                animator.SetTrigger("Left");
-            }
-            else if (transformVelocity.x > 0.05f)
-            {
-                animator.SetTrigger("Right");
-            }
-            else if (transformVelocity.z < -0.05f)
-            {
-                animator.SetTrigger("Down");
-            }
-            else if (transformVelocity.z > 0.05f)
-            {
-                animator.SetTrigger("Up");
-            }
-
             if (transformVelocity == Vector3.zero)
             {
-                animator.SetTrigger("Idle");
+                if (isMove == true)
+                {
+                    isMove = false;
+                    animator.SetTrigger("Idle");
+                    SetAnim("Move", isMove);
+                }
+            }
+            else
+            {
+                if (isMove == false)
+                {
+                    isMove = true;
+                    SetAnim("Move", isMove);
+                }
+
+                if (transformVelocity.z > 0f)
+                {
+                    if (transformVelocity.x < 0f)
+                    {
+                        animator.SetTrigger("SXB");
+                    }
+                    else if (transformVelocity.x >= 0f)
+                    {
+                        animator.SetTrigger("DXB");
+                    }
+                }
+                else if (transformVelocity.z <= 0f)
+                {
+                    if (transformVelocity.x < 0f)
+                    {
+                        animator.SetTrigger("SXF");
+                    }
+                    else if (transformVelocity.x >= 0f)
+                    {
+                        animator.SetTrigger("DXF");
+                    }
+                }
             }
         }
 
@@ -251,6 +321,7 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
             {
                 shooted = true;
                 BulletPoolManager.instance.Shoot(playerData.bullet, _shootPosition.position, aimDirection, this, null);
+                Attack();
             }
             else if (Input.GetAxis("Fire1") <= 0 && shooted == true)
             {
@@ -260,9 +331,15 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
             if (Input.GetButtonDown("Fire2"))
             {
                 BulletPoolManager.instance.Shoot(playerData.bullet, _shootPosition.position, aimDirection, this, null);
+                Attack();
             }
         }
     } 
+
+    void Attack(SetSequences set = null)
+    {
+        SetAnim("Attack");
+    }
     #endregion
 
     #region Sequence
@@ -340,7 +417,6 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
         if (!buttonJustPressed)
         {
             currentInputSequence.Add(input);
-            //OnInputPressed?.Invoke(input);
             consecutiveButtonPressed++;
             buttonJustPressed = true;
         }
@@ -376,4 +452,9 @@ public class PlayerControllerInput : MonoBehaviour , IShooter
         ResetSequences();
     }
     #endregion
+
+    public enum AnimDirection
+    {
+        dxf, dxb, sxf, sxb,
+    }
 }

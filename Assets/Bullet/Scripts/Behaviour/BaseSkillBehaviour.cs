@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[HelpURL("https://docs.google.com/document/d/1JnG2W7Do95PG1Nn0zQf1C5AO3cDDnKyLIOgVYChF7qA/edit?usp=sharing")]
 [RequireComponent(typeof(BulletBase))]
 public abstract class BaseSkillBehaviour : MonoBehaviour
 {
