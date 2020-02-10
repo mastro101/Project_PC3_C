@@ -6,6 +6,8 @@ public class SpinnerController : MonoBehaviour
 {
     ParticleSystem ps;
     ParticleSystem.VelocityOverLifetimeModule vel;
+    float speedVariation = 0.0f;
+    public int acceleration = 1;
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
@@ -16,12 +18,14 @@ public class SpinnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") > 0 && speedVariation <= 2.5f)
         {
-            vel.orbitalY = new ParticleSystem.MinMaxCurve(2.5f);
-        }else if (Input.GetAxis("Horizontal") < 0)
+            speedVariation += Time.deltaTime * acceleration;
+            vel.orbitalY = new ParticleSystem.MinMaxCurve(speedVariation);
+        }else if (Input.GetAxis("Horizontal") < 0 && speedVariation >= -2.5f)
         {
-            vel.orbitalY = new ParticleSystem.MinMaxCurve(-2.5f);
+            speedVariation -= Time.deltaTime * acceleration;
+            vel.orbitalY = new ParticleSystem.MinMaxCurve(speedVariation);
         }
     }
 }
