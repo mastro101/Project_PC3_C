@@ -99,6 +99,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room1
       objectReference: {fileID: 0}
+    - target: {fileID: 8007142283065842534, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007142283523320921, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007142283619507491, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007142284264207064, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26ec5d7e81917dc43ab1ab1f4186152c, type: 3}
 --- !u!4 &7949534891699353626 stripped
@@ -114,11 +134,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246481768771939345}
     m_Modifications:
-    - target: {fileID: 2651407455878728736, guid: f0ebca2998e99654e894a26aeb83d727,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2651407455878728740, guid: f0ebca2998e99654e894a26aeb83d727,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,6 +199,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2651407455878728736, guid: f0ebca2998e99654e894a26aeb83d727,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ebca2998e99654e894a26aeb83d727, type: 3}
 --- !u!4 &4114406286729959472 stripped
@@ -199,11 +219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246481768771939345}
     m_Modifications:
-    - target: {fileID: 2651407455878728736, guid: f0ebca2998e99654e894a26aeb83d727,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 2651407455878728740, guid: f0ebca2998e99654e894a26aeb83d727,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2651407455878728736, guid: f0ebca2998e99654e894a26aeb83d727,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ebca2998e99654e894a26aeb83d727, type: 3}

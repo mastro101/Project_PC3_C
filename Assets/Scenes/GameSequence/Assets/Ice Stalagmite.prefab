@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1313189603744989768}
   m_Layer: 0
   m_Name: Ice Stalagmite
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8432001316320157946}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.012035608, y: 0, z: 0.86}
   m_LocalScale: {x: 0.5, y: 0.50000024, z: 1}
   m_Children: []

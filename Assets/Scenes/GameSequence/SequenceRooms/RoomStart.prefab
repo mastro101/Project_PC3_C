@@ -67,6 +67,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomStart
       objectReference: {fileID: 0}
+    - target: {fileID: 7328315089239977232, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a99e2b9a193f2ba4ba4fa8391efeedca,
+        type: 3}
+    - target: {fileID: 8007142283065842534, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007142283523320921, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007142283619507491, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007142284264207064, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8007142283619507489, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
         type: 3}
       propertyPath: m_Size.x
@@ -77,11 +103,5 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7328315089239977232, guid: 26ec5d7e81917dc43ab1ab1f4186152c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a99e2b9a193f2ba4ba4fa8391efeedca,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26ec5d7e81917dc43ab1ab1f4186152c, type: 3}

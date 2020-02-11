@@ -9583,8 +9583,8 @@ MonoBehaviour:
   ID: 1
   vfx: {fileID: 2833115021880217422}
   _duration: 2
-  damage: 1
-  friendlyFire: 0
+  damage: 75
+  friendlyFire: 1
 --- !u!114 &6628953432127292913
 MonoBehaviour:
   m_ObjectHideFlags: 0
