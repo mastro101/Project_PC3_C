@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c32d9fb331976243887b7399cb2d70f, type: 2}
   - {fileID: 11400000, guid: 6c32d9fb331976243887b7399cb2d70f, type: 2}
   - {fileID: 11400000, guid: 6c32d9fb331976243887b7399cb2d70f, type: 2}
-  skillPrefab: {fileID: 2064250077824822761, guid: 8893eb90a02947447aac1b624ea0da86,
+  skillPrefab: {fileID: 883294978301443111, guid: f04edaafe138d66439de9dae31621a58,
     type: 3}
